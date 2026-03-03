@@ -1420,7 +1420,7 @@ header {
 <section class="about-quote" id="about">
   <div class="about-inner">
     <div class="about-image">
-      <div id="globe-canvas" style="width: 100%; height: 400px; border-radius: 16px; background: linear-gradient(135deg, #0d1033 0%, #1a1b4b 100%);"></div>
+      <div id="globe-canvas" style="width: 100%; height: 400px; border-radius: 16px;"></div>
     </div>
     <div class="about-content">
       <blockquote>"Dispersion Capital invests in the foundational technologies of a multi-chain, multi-model, multi-currency, and multi-platform world."</blockquote>
@@ -1794,36 +1794,40 @@ const initGlobe = () => {
   const sphereLine = new THREE.LineSegments(wireframe, lineMaterial);
   scene.add(sphereLine);
 
-  // Hub locations - evenly distributed globally
+  // Hub locations - evenly distributed globally with more in southern hemisphere
   const hubs = [
-    // Northern Hemisphere
+    // Northern Hemisphere (fewer)
     { name: 'London', lat: 51.5, lon: -0.1 },
     { name: 'New York', lat: 40.7, lon: -74.0 },
     { name: 'Tokyo', lat: 35.7, lon: 139.7 },
-    { name: 'Moscow', lat: 55.8, lon: 37.6 },
     { name: 'LA', lat: 34.1, lon: -118.2 },
-    { name: 'Berlin', lat: 52.5, lon: 13.4 },
     { name: 'Mumbai', lat: 19.1, lon: 72.9 },
-    { name: 'Beijing', lat: 39.9, lon: 116.4 },
     // Equatorial
     { name: 'Singapore', lat: 1.4, lon: 103.8 },
     { name: 'Nairobi', lat: -1.3, lon: 36.8 },
     { name: 'Quito', lat: -0.2, lon: -78.5 },
     { name: 'Jakarta', lat: -6.2, lon: 106.8 },
-    // Southern Hemisphere
+    { name: 'Lagos', lat: 6.5, lon: 3.4 },
+    // Southern Hemisphere (more dots)
     { name: 'Sydney', lat: -33.9, lon: 151.2 },
     { name: 'Sao Paulo', lat: -23.6, lon: -46.6 },
     { name: 'Cape Town', lat: -33.9, lon: 18.4 },
     { name: 'Buenos Aires', lat: -34.6, lon: -58.4 },
     { name: 'Auckland', lat: -36.8, lon: 174.8 },
     { name: 'Santiago', lat: -33.4, lon: -70.6 },
-    // Additional sparse points
-    { name: 'Reykjavik', lat: 64.1, lon: -21.9 },
-    { name: 'Anchorage', lat: 61.2, lon: -149.9 },
     { name: 'Perth', lat: -31.9, lon: 115.9 },
-    { name: 'Lagos', lat: 6.5, lon: 3.4 },
-    { name: 'Dubai', lat: 25.2, lon: 55.3 },
-    { name: 'Seoul', lat: 37.6, lon: 127.0 }
+    { name: 'Melbourne', lat: -37.8, lon: 144.9 },
+    { name: 'Johannesburg', lat: -26.2, lon: 28.0 },
+    { name: 'Lima', lat: -12.0, lon: -77.0 },
+    { name: 'Montevideo', lat: -34.9, lon: -56.2 },
+    { name: 'Bogota', lat: -4.7, lon: -74.1 },
+    // Deep South
+    { name: 'Christchurch', lat: -43.5, lon: 172.6 },
+    { name: 'Ushuaia', lat: -54.8, lon: -68.3 },
+    { name: 'Hobart', lat: -42.9, lon: 147.3 },
+    { name: 'Punta Arenas', lat: -53.2, lon: -70.9 },
+    { name: 'Dunedin', lat: -45.9, lon: 170.5 },
+    { name: 'Invercargill', lat: -46.4, lon: 168.4 }
   ];
 
   const convertCoords = (lat, lon, radius) => {

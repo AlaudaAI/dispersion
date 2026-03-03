@@ -6,6 +6,7 @@
 <title>Dispersion Capital | Pioneering the Decentralized Future</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
 :root {
   --bg-light: #f8f7f4;
@@ -1419,7 +1420,7 @@ header {
 <section class="about-quote" id="about">
   <div class="about-inner">
     <div class="about-image">
-      <img src="assets/globe-animated.svg" alt="Global Web3 Infrastructure" style="width: 100%; height: auto; border-radius: 16px;">
+      <div id="globe-canvas" style="width: 100%; height: 400px; border-radius: 16px; background: linear-gradient(135deg, #0d1033 0%, #1a1b4b 100%);"></div>
     </div>
     <div class="about-content">
       <blockquote>"Dispersion Capital invests in the foundational technologies of a multi-chain, multi-model, multi-currency, and multi-platform world."</blockquote>
@@ -1763,6 +1764,138 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     track.appendChild(clone);
   });
 })();
+</script>
+
+<script>
+// Three.js Animated Globe
+const initGlobe = () => {
+  const container = document.getElementById('globe-canvas');
+  if (!container) return;
+  
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  
+  renderer.setSize(container.offsetWidth, container.offsetHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  camera.position.z = 240;
+
+  // Globe wireframe
+  const globeRadius = 80;
+  const geometry = new THREE.SphereGeometry(globeRadius, 32, 32);
+  const wireframe = new THREE.WireframeGeometry(geometry);
+  const lineMaterial = new THREE.LineBasicMaterial({ 
+    color: 0xFFB524, 
+    transparent: true, 
+    opacity: 0.15 
+  });
+  const sphereLine = new THREE.LineSegments(wireframe, lineMaterial);
+  scene.add(sphereLine);
+
+  // Hub locations
+  const hubs = [
+    { name: 'London', lat: 51.5074, lon: -0.1278 },
+    { name: 'New York', lat: 40.7128, lon: -74.0060 },
+    { name: 'Singapore', lat: 1.3521, lon: 103.8198 },
+    { name: 'Dubai', lat: 25.2048, lon: 55.2708 },
+    { name: 'Tokyo', lat: 35.6762, lon: 139.6503 },
+    { name: 'SF', lat: 37.7749, lon: -122.4194 }
+  ];
+
+  const convertCoords = (lat, lon, radius) => {
+    const phi = (90 - lat) * (Math.PI / 180);
+    const theta = (lon + 180) * (Math.PI / 180);
+    return new THREE.Vector3(
+      -radius * Math.sin(phi) * Math.cos(theta),
+      radius * Math.cos(phi),
+      radius * Math.sin(phi) * Math.sin(theta)
+    );
+  };
+
+  const hubGroup = new THREE.Group();
+  scene.add(hubGroup);
+
+  hubs.forEach(hub => {
+    const pos = convertCoords(hub.lat, hub.lon, globeRadius);
+    const dotGeo = new THREE.SphereGeometry(1.5, 12, 12);
+    const dotMat = new THREE.MeshBasicMaterial({ color: 0xFFB524, transparent: true, opacity: 0.9 });
+    const dot = new THREE.Mesh(dotGeo, dotMat);
+    dot.position.copy(pos);
+    hubGroup.add(dot);
+  });
+
+  // Arcs between hubs
+  const arcMaterial = new THREE.LineBasicMaterial({ 
+    color: 0x8b7cff, 
+    transparent: true, 
+    opacity: 0.4 
+  });
+
+  const createArc = (startHub, endHub) => {
+    const start = convertCoords(startHub.lat, startHub.lon, globeRadius);
+    const end = convertCoords(endHub.lat, endHub.lon, globeRadius);
+    
+    const mid = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+    const distance = start.distanceTo(end);
+    mid.normalize().multiplyScalar(globeRadius + distance * 0.4);
+
+    const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
+    const points = curve.getPoints(50);
+    const arcGeo = new THREE.BufferGeometry().setFromPoints(points);
+    const arc = new THREE.Line(arcGeo, arcMaterial);
+    hubGroup.add(arc);
+
+    // Spark traveling along arc
+    const sparkGeo = new THREE.SphereGeometry(0.8, 8, 8);
+    const sparkMat = new THREE.MeshBasicMaterial({ color: 0xFFB524, transparent: true, opacity: 1 });
+    const spark = new THREE.Mesh(sparkGeo, sparkMat);
+    hubGroup.add(spark);
+
+    return { curve, spark, t: Math.random() };
+  };
+
+  const activeArcs = [];
+  for (let i = 0; i < hubs.length; i++) {
+    for (let j = i + 1; j < hubs.length; j++) {
+      if (Math.random() > 0.5) {
+        activeArcs.push(createArc(hubs[i], hubs[j]));
+      }
+    }
+  }
+
+  const animate = () => {
+    requestAnimationFrame(animate);
+    
+    sphereLine.rotation.y += 0.002;
+    hubGroup.rotation.y += 0.002;
+
+    activeArcs.forEach(arc => {
+      arc.t += 0.004;
+      if (arc.t > 1) arc.t = 0;
+      const pos = arc.curve.getPoint(arc.t);
+      arc.spark.position.copy(pos);
+    });
+
+    renderer.render(scene, camera);
+  };
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = container.offsetWidth / container.offsetHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
+  });
+};
+
+// Init when DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initGlobe);
+} else {
+  initGlobe();
+}
 </script>
 </body>
 </html>

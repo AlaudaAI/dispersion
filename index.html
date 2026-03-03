@@ -668,6 +668,104 @@ header {
   display: block;
 }
 
+/* ========== ANIMATED GLOBE ========== */
+@keyframes globeRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ringPulse1 {
+  0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); box-shadow: 0 0 20px rgba(107, 124, 255, 0.3); }
+  50% { opacity: 0.8; transform: scale(1.05) rotate(180deg); box-shadow: 0 0 40px rgba(107, 124, 255, 0.6); }
+}
+
+@keyframes ringPulse2 {
+  0%, 100% { opacity: 0.2; transform: scale(1) rotate(0deg); box-shadow: 0 0 15px rgba(255, 181, 36, 0.3); }
+  50% { opacity: 0.7; transform: scale(1.08) rotate(-180deg); box-shadow: 0 0 35px rgba(255, 181, 36, 0.5); }
+}
+
+@keyframes ringPulse3 {
+  0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); box-shadow: 0 0 25px rgba(168, 100, 255, 0.4); }
+  50% { opacity: 0.9; transform: scale(1.03) rotate(180deg); box-shadow: 0 0 50px rgba(168, 100, 255, 0.7); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.globe-container {
+  background: radial-gradient(ellipse at center, rgba(13, 16, 51, 0.9) 0%, rgba(0, 2, 37, 1) 70%);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.globe-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globe-img {
+  width: 85%;
+  height: auto;
+  border-radius: 50%;
+  animation: globeRotate 30s linear infinite;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 30px rgba(107, 124, 255, 0.4));
+}
+
+.globe-glow {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107, 124, 255, 0.3) 0%, transparent 70%);
+  animation: glowPulse 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.globe-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  pointer-events: none;
+}
+
+.ring-1 {
+  width: 95%;
+  height: 95%;
+  border-color: rgba(107, 124, 255, 0.5);
+  animation: ringPulse1 4s ease-in-out infinite;
+  z-index: 3;
+}
+
+.ring-2 {
+  width: 105%;
+  height: 105%;
+  border-color: rgba(255, 181, 36, 0.4);
+  animation: ringPulse2 5s ease-in-out infinite 0.5s;
+  z-index: 3;
+}
+
+.ring-3 {
+  width: 115%;
+  height: 115%;
+  border-color: rgba(168, 100, 255, 0.3);
+  animation: ringPulse3 6s ease-in-out infinite 1s;
+  z-index: 3;
+}
+
 .about-content blockquote {
   font-size: clamp(20px, 2.5vw, 28px);
   font-weight: 500;
@@ -1418,8 +1516,14 @@ header {
 <!-- ABOUT QUOTE -->
 <section class="about-quote" id="about">
   <div class="about-inner">
-    <div class="about-image" style="display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, rgba(26,27,75,0.05) 0%, rgba(107,124,255,0.1) 100%); border-radius: 24px; padding: 40px;">
-      <img src="assets/globe-animated.svg" alt="Global Web3 Infrastructure" style="max-width: 100%; height: auto;">
+    <div class="about-image globe-container">
+      <div class="globe-wrapper">
+        <img src="assets/globe-network.jpg" alt="Global Web3 Infrastructure" class="globe-img">
+        <div class="globe-glow"></div>
+        <div class="globe-ring ring-1"></div>
+        <div class="globe-ring ring-2"></div>
+        <div class="globe-ring ring-3"></div>
+      </div>
     </div>
     <div class="about-content">
       <blockquote>"Dispersion Capital invests in the foundational technologies of a multi-chain, multi-model, multi-currency, and multi-platform world."</blockquote>

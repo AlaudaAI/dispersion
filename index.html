@@ -1308,6 +1308,227 @@ header {
   letter-spacing: 0.03em;
 }
 
+/* ========== TEAM SECTION ========== */
+.team-section {
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .team-section {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+.team-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .team-inner {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-inner {
+    padding: 0 var(--space-xl);
+  }
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.team-header h2 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.team-header h2 span {
+  color: var(--accent-gold);
+}
+
+.team-header p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: var(--space-md) auto 0;
+}
+
+.team-founder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .team-founder {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-2xl);
+    padding: var(--space-2xl);
+  }
+}
+
+.team-founder-image {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .team-founder-image {
+    margin: 0;
+  }
+}
+
+.team-founder-image img {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 271/318;
+  object-fit: cover;
+}
+
+.team-founder-content {
+  flex: 1;
+}
+
+.team-founder-name {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.team-founder-title {
+  font-size: 14px;
+  color: var(--accent-gold);
+  margin-bottom: var(--space-lg);
+}
+
+.team-founder-bio {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.team-founder-social {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.team-founder-social a {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: all var(--transition);
+}
+
+.team-founder-social a:hover {
+  background: var(--accent-gold);
+  color: white;
+}
+
+.team-advisors-header {
+  margin-bottom: var(--space-xl);
+}
+
+.team-advisors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (min-width: 600px) {
+  .team-advisors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .team-advisors-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .team-advisors-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.team-advisor-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all var(--transition);
+}
+
+.team-advisor-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.team-advisor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-gold), #e07856);
+  margin: 0 auto var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+}
+
+.team-advisor-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.team-advisor-role {
+  font-size: 12px;
+  color: var(--accent-gold);
+  margin-bottom: 4px;
+}
+
+.team-advisor-company {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
 /* ========== MOBILE OPTIMIZATIONS ========== */
 @media (max-width: 767px) {
   /* Globe canvas - smaller on mobile */
@@ -1454,6 +1675,7 @@ header {
     <nav class="nav-center">
       <a href="#portfolio" class="nav-link">Portfolio</a>
       <a href="#about" class="nav-link">About</a>
+      <a href="#team" class="nav-link">Team</a>
       <a href="#thesis" class="nav-link">Investment Thesis</a>
     </nav>
     <a href="mailto:pitch@dispersion.xyz" class="header-cta">SEND US A PITCH</a>
@@ -1561,6 +1783,126 @@ header {
       <p>Developers need a way to build functional, accessible, scalable decentralized applications. The vision is there, but the infrastructure isn't — yet.</p>
       <p>That's why we're here. We work with builders that are solving these gaps and making mass adoption of web3 possible.</p>
       <p>We believe blockchain will revolutionize existing infrastructure and the way we do business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="team-section" id="team">
+  <div class="team-inner">
+    <div class="team-header">
+      <div class="section-header" style="justify-content: center;">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
+        </svg>
+        <span>Our Team</span>
+      </div>
+      <h2>Meet the <span>Team</span></h2>
+      <p>We are a global team of engineers, data scientists, operators, and investors driven by a strong culture of collaboration, a passion for crypto-economics, and optimism for the future of the web.</p>
+    </div>
+    
+    <!-- Founder -->
+    <div class="team-founder">
+      <div class="team-founder-image">
+        <img src="assets/patrick.jpg" alt="Patrick Chang">
+      </div>
+      <div class="team-founder-content">
+        <h3 class="team-founder-name">Patrick Chang</h3>
+        <p class="team-founder-title">Founder and Managing Partner</p>
+        <p class="team-founder-bio">
+          Patrick Chang is the founder and managing partner of Dispersion Capital. With his deep background in enterprise and web3 infrastructure, Patrick's mission is to fund disruptive technology to help developers build the underlying foundation for the decentralized web.
+        </p>
+        <p class="team-founder-bio">
+          Patrick is a prominent early investor in web3's most pioneering innovators and protocols. He has invested in nine companies at the inception stage that later became unicorns and three more with large acquisitions. These include Alchemy, Dapper Labs, Flow, Forte, Syndicate, Theta, Blockstack(STX), Branch Metrics, and Volterra.
+        </p>
+        <p class="team-founder-bio">
+          Patrick also led investments in cutting-edge infrastructure technology at prestigious firms, including Cota Capital, Investor Growth Capital, Bain Capital Ventures, and Foundation Capital. With nearly two decades of experience in web2 and web3, Patrick began his career in tech investment banking and M&A, working for Bank of America Merrill Lynch and Lehman Brothers.
+        </p>
+        <div class="team-founder-social">
+          <a href="mailto:patrick@dispersion.xyz" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/patricknchang/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://twitter.com/appetiteforgood" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Advisors -->
+    <div class="team-advisors-header">
+      <div class="section-header">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
+        </svg>
+        <span>Venture Partners and Advisors</span>
+      </div>
+    </div>
+    
+    <div class="team-advisors-grid">
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">RL</div>
+        <h4 class="team-advisor-name">Raymond Liao</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">Samsung Next Ventures Founding Managing Director</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">MC</div>
+        <h4 class="team-advisor-name">Matt Cheng</h4>
+        <p class="team-advisor-role">Venture Partner</p>
+        <p class="team-advisor-company">Founder and Managing Partner, Cherubic Ventures</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">HM</div>
+        <h4 class="team-advisor-name">Dr. Hossein Moiin</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">Former CTO of Nokia</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">PA</div>
+        <h4 class="team-advisor-name">Pierre Arys</h4>
+        <p class="team-advisor-role">Venture Partner</p>
+        <p class="team-advisor-company">Partner at Cherubic Ventures</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">CJ</div>
+        <h4 class="team-advisor-name">Cullen Jennings</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">Senior Tech Fellow and CTO at Cisco</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">PB</div>
+        <h4 class="team-advisor-name">Paul Brody</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">EY Global Blockchain Leader</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">RG</div>
+        <h4 class="team-advisor-name">Roham Gharegozlou</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">CEO, Co-founder Dapper Labs, FLOW</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">MN</div>
+        <h4 class="team-advisor-name">Mikhael Naayem</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">President, Co-Founder Dapper Labs</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">DE</div>
+        <h4 class="team-advisor-name">David Eun</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">Former President and CIO of Samsung</p>
+      </div>
+      <div class="team-advisor-card">
+        <div class="team-advisor-avatar">KB</div>
+        <h4 class="team-advisor-name">Kary Bheemaiah</h4>
+        <p class="team-advisor-role">Advisor</p>
+        <p class="team-advisor-company">VP CTIO, Capgemini Invent</p>
+      </div>
     </div>
   </div>
 </section>

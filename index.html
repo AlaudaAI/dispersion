@@ -1307,6 +1307,140 @@ header {
   color: rgba(255, 255, 255, 0.4);
   letter-spacing: 0.03em;
 }
+
+/* ========== MOBILE OPTIMIZATIONS ========== */
+@media (max-width: 767px) {
+  /* Globe canvas - smaller on mobile */
+  #globe-canvas {
+    height: 280px !important;
+  }
+  
+  /* Practice cards - better mobile layout */
+  .practice-card {
+    min-height: 240px;
+    padding: var(--space-md);
+  }
+  
+  .card-image {
+    height: 100px;
+  }
+  
+  /* Hero section adjustments */
+  .hero-headline {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+  
+  .hero-tagline {
+    font-size: 13px;
+  }
+  
+  .hero-paragraph {
+    font-size: 15px;
+  }
+  
+  /* About section - stack on mobile */
+  .about-inner {
+    gap: var(--space-lg);
+  }
+  
+  .about-content blockquote {
+    font-size: 18px;
+    padding-left: var(--space-md);
+  }
+  
+  /* Testimonials - adjust card size */
+  .testimonial-card {
+    width: 280px;
+    min-width: 280px;
+    padding: var(--space-lg);
+  }
+  
+  .testimonial-quote {
+    font-size: 14px;
+  }
+  
+  /* Portfolio grid - 2 columns max on mobile */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+  
+  .portfolio-item {
+    padding: var(--space-md);
+    min-height: 80px;
+  }
+  
+  /* Footer adjustments */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  /* CTA section */
+  .cta-inner h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+  
+  .cta-btn {
+    font-size: 12px;
+    padding: 14px 28px;
+  }
+  
+  /* Practice header */
+  .practice-header h2 {
+    font-size: 24px;
+  }
+  
+  /* Section spacing */
+  .practice-areas,
+  .about-quote,
+  .portfolio-section,
+  .testimonials {
+    padding: var(--space-lg) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens */
+  #globe-canvas {
+    height: 220px !important;
+  }
+  
+  .practice-card {
+    min-height: 220px;
+    padding: var(--space-sm);
+  }
+  
+  .card-image {
+    height: 80px;
+  }
+  
+  .card-number {
+    font-size: 12px;
+    margin-bottom: var(--space-md);
+  }
+  
+  .practice-card h3 {
+    font-size: 18px;
+  }
+  
+  .practice-card p {
+    font-size: 13px;
+  }
+  
+  .testimonial-card {
+    width: 260px;
+    min-width: 260px;
+  }
+  
+  .header-inner {
+    height: 56px;
+  }
+  
+  .brand img {
+    height: 28px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1420,7 +1554,7 @@ header {
 <section class="about-quote" id="about">
   <div class="about-inner">
     <div class="about-image">
-      <div id="globe-canvas" style="width: 100%; height: 400px; border-radius: 16px;"></div>
+      <div id="globe-canvas" style="width: 100%; height: 400px; border-radius: 16px; min-height: 220px;"></div>
     </div>
     <div class="about-content">
       <blockquote>"Dispersion Capital invests in the foundational technologies of a multi-chain, multi-model, multi-currency, and multi-platform world."</blockquote>

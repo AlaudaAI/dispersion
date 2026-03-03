@@ -668,112 +668,6 @@ header {
   display: block;
 }
 
-/* ========== ANIMATED GLOBE ========== */
-@keyframes globeRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes globeGlow {
-  0%, 100% { 
-    filter: drop-shadow(0 0 20px rgba(0, 200, 255, 0.4)) drop-shadow(0 0 40px rgba(100, 150, 255, 0.3));
-  }
-  50% { 
-    filter: drop-shadow(0 0 50px rgba(0, 200, 255, 0.7)) drop-shadow(0 0 80px rgba(100, 150, 255, 0.5));
-  }
-}
-
-@keyframes ringFlash1 {
-  0%, 100% { opacity: 0.3; box-shadow: 0 0 20px rgba(0, 200, 255, 0.4); }
-  50% { opacity: 1; box-shadow: 0 0 40px rgba(0, 200, 255, 0.8); }
-}
-
-@keyframes ringFlash2 {
-  0%, 100% { opacity: 0.2; box-shadow: 0 0 25px rgba(150, 100, 255, 0.3); }
-  50% { opacity: 0.9; box-shadow: 0 0 50px rgba(150, 100, 255, 0.6); }
-}
-
-@keyframes ringFlash3 {
-  0%, 100% { opacity: 0.2; box-shadow: 0 0 30px rgba(255, 150, 200, 0.3); }
-  50% { opacity: 0.8; box-shadow: 0 0 60px rgba(255, 150, 200, 0.5); }
-}
-
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.08); }
-}
-
-.globe-container {
-  background: radial-gradient(ellipse at center, rgba(8, 15, 40, 0.98) 0%, rgba(3, 5, 20, 1) 70%);
-  border-radius: 24px;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.globe-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-  aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.globe-img {
-  width: 90%;
-  height: auto;
-  border-radius: 8px;
-  animation: globeRotate 30s linear infinite, globeGlow 3s ease-in-out infinite;
-  position: relative;
-  z-index: 2;
-}
-
-.globe-glow {
-  position: absolute;
-  width: 85%;
-  height: 85%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 200, 255, 0.15) 0%, rgba(100, 100, 255, 0.1) 40%, transparent 70%);
-  animation: glowPulse 4s ease-in-out infinite;
-  z-index: 1;
-}
-
-.globe-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  pointer-events: none;
-}
-
-.ring-1 {
-  width: 100%;
-  height: 100%;
-  border-color: rgba(0, 200, 255, 0.5);
-  animation: ringFlash1 2s ease-in-out infinite;
-  z-index: 3;
-}
-
-.ring-2 {
-  width: 115%;
-  height: 115%;
-  border-color: rgba(150, 100, 255, 0.4);
-  animation: ringFlash2 3s ease-in-out infinite 0.5s;
-  z-index: 3;
-}
-
-.ring-3 {
-  width: 130%;
-  height: 130%;
-  border-color: rgba(255, 150, 200, 0.3);
-  animation: ringFlash3 4s ease-in-out infinite 1s;
-  z-index: 3;
-}
-
 .about-content blockquote {
   font-size: clamp(20px, 2.5vw, 28px);
   font-weight: 500;
@@ -1524,14 +1418,8 @@ header {
 <!-- ABOUT QUOTE -->
 <section class="about-quote" id="about">
   <div class="about-inner">
-    <div class="about-image globe-container">
-      <div class="globe-wrapper">
-        <img src="assets/globe-network.jpg" alt="Global Web3 Infrastructure" class="globe-img">
-        <div class="globe-glow"></div>
-        <div class="globe-ring ring-1"></div>
-        <div class="globe-ring ring-2"></div>
-        <div class="globe-ring ring-3"></div>
-      </div>
+    <div class="about-image">
+      <img src="assets/globe-network.jpg" alt="Global Web3 Infrastructure" style="width: 100%; height: auto; border-radius: 16px;">
     </div>
     <div class="about-content">
       <blockquote>"Dispersion Capital invests in the foundational technologies of a multi-chain, multi-model, multi-currency, and multi-platform world."</blockquote>

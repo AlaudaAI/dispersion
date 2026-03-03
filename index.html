@@ -1794,14 +1794,36 @@ const initGlobe = () => {
   const sphereLine = new THREE.LineSegments(wireframe, lineMaterial);
   scene.add(sphereLine);
 
-  // Hub locations
+  // Hub locations - evenly distributed globally
   const hubs = [
-    { name: 'London', lat: 51.5074, lon: -0.1278 },
-    { name: 'New York', lat: 40.7128, lon: -74.0060 },
-    { name: 'Singapore', lat: 1.3521, lon: 103.8198 },
-    { name: 'Dubai', lat: 25.2048, lon: 55.2708 },
-    { name: 'Tokyo', lat: 35.6762, lon: 139.6503 },
-    { name: 'SF', lat: 37.7749, lon: -122.4194 }
+    // Northern Hemisphere
+    { name: 'London', lat: 51.5, lon: -0.1 },
+    { name: 'New York', lat: 40.7, lon: -74.0 },
+    { name: 'Tokyo', lat: 35.7, lon: 139.7 },
+    { name: 'Moscow', lat: 55.8, lon: 37.6 },
+    { name: 'LA', lat: 34.1, lon: -118.2 },
+    { name: 'Berlin', lat: 52.5, lon: 13.4 },
+    { name: 'Mumbai', lat: 19.1, lon: 72.9 },
+    { name: 'Beijing', lat: 39.9, lon: 116.4 },
+    // Equatorial
+    { name: 'Singapore', lat: 1.4, lon: 103.8 },
+    { name: 'Nairobi', lat: -1.3, lon: 36.8 },
+    { name: 'Quito', lat: -0.2, lon: -78.5 },
+    { name: 'Jakarta', lat: -6.2, lon: 106.8 },
+    // Southern Hemisphere
+    { name: 'Sydney', lat: -33.9, lon: 151.2 },
+    { name: 'Sao Paulo', lat: -23.6, lon: -46.6 },
+    { name: 'Cape Town', lat: -33.9, lon: 18.4 },
+    { name: 'Buenos Aires', lat: -34.6, lon: -58.4 },
+    { name: 'Auckland', lat: -36.8, lon: 174.8 },
+    { name: 'Santiago', lat: -33.4, lon: -70.6 },
+    // Additional sparse points
+    { name: 'Reykjavik', lat: 64.1, lon: -21.9 },
+    { name: 'Anchorage', lat: 61.2, lon: -149.9 },
+    { name: 'Perth', lat: -31.9, lon: 115.9 },
+    { name: 'Lagos', lat: 6.5, lon: 3.4 },
+    { name: 'Dubai', lat: 25.2, lon: 55.3 },
+    { name: 'Seoul', lat: 37.6, lon: 127.0 }
   ];
 
   const convertCoords = (lat, lon, radius) => {
@@ -1817,10 +1839,12 @@ const initGlobe = () => {
   const hubGroup = new THREE.Group();
   scene.add(hubGroup);
 
-  hubs.forEach(hub => {
+  hubs.forEach((hub, i) => {
     const pos = convertCoords(hub.lat, hub.lon, globeRadius);
-    const dotGeo = new THREE.SphereGeometry(1.5, 12, 12);
-    const dotMat = new THREE.MeshBasicMaterial({ color: 0xFFB524, transparent: true, opacity: 0.9 });
+    const size = 0.8 + Math.random() * 0.8; // Vary size 0.8-1.6
+    const dotGeo = new THREE.SphereGeometry(size, 8, 8);
+    const opacity = 0.5 + Math.random() * 0.4; // Vary opacity 0.5-0.9
+    const dotMat = new THREE.MeshBasicMaterial({ color: 0xFFB524, transparent: true, opacity: opacity });
     const dot = new THREE.Mesh(dotGeo, dotMat);
     dot.position.copy(pos);
     hubGroup.add(dot);
@@ -1857,12 +1881,13 @@ const initGlobe = () => {
   };
 
   const activeArcs = [];
-  for (let i = 0; i < hubs.length; i++) {
-    for (let j = i + 1; j < hubs.length; j++) {
-      if (Math.random() > 0.5) {
-        activeArcs.push(createArc(hubs[i], hubs[j]));
-      }
-    }
+  // Only create ~8-10 arcs between random hub pairs
+  const arcCount = 8;
+  for (let a = 0; a < arcCount; a++) {
+    const i = Math.floor(Math.random() * hubs.length);
+    let j = Math.floor(Math.random() * hubs.length);
+    while (j === i) j = Math.floor(Math.random() * hubs.length);
+    activeArcs.push(createArc(hubs[i], hubs[j]));
   }
 
   const animate = () => {

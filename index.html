@@ -1643,7 +1643,7 @@ header {
           <p>Web3 and decentralized infrastructure redefine applications, prioritizing ownership, interoperability, and compute/storage capabilities.</p>
         </div>
         <div class="card-image">
-          <img src="assets/thematics-1.b71be0d.png" alt="Decentralize">
+          <canvas id="ascii-decentralize" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
         </div>
       </div>
       <div class="practice-card">
@@ -1653,7 +1653,7 @@ header {
           <p>Empower decentralized infrastructure with reliable tools: architecture, cybersecurity, privacy tech, gateway protocols, decentralized identity.</p>
         </div>
         <div class="card-image">
-          <img src="assets/thematics-2.a2c2d87.png" alt="Develop">
+          <canvas id="ascii-develop" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
         </div>
       </div>
       <div class="practice-card">
@@ -1663,7 +1663,7 @@ header {
           <p>Deploying web3 requires a comprehensive suite of tools, protocols, and infrastructure to implement cutting-edge, decentralized services.</p>
         </div>
         <div class="card-image">
-          <img src="assets/thematics-3.117b357.png" alt="Deploy">
+          <canvas id="ascii-deploy" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
         </div>
       </div>
       <div class="practice-card">
@@ -1673,7 +1673,7 @@ header {
           <p>Web3 democratizes tech, powering a trustless, interconnected economy. It embraces incentives, openness, collaboration, and inclusivity.</p>
         </div>
         <div class="card-image">
-          <img src="assets/thematics-4.5fdcb49.png" alt="Democratize">
+          <canvas id="ascii-democratize" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
         </div>
       </div>
     </div>
@@ -1924,6 +1924,213 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initGlobe);
 } else {
   initGlobe();
+}
+</script>
+
+<script>
+// ASCII Canvas Visualizations for 4D Section
+const initAsciiCanvases = () => {
+  const densityChars = " .'`^,:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
+  const charSize = 10;
+  
+  // Setup canvas with proper DPI
+  const setupCanvas = (canvas) => {
+    if (!canvas) return null;
+    const parent = canvas.parentElement;
+    const width = parent.clientWidth || 300;
+    const height = parent.clientHeight || 200;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    return { ctx, width, height };
+  };
+
+  // 1. DECENTRALIZE - Networked nodes
+  const canvas1 = document.getElementById('ascii-decentralize');
+  const setup1 = setupCanvas(canvas1);
+  if (setup1) {
+    let time1 = 0;
+    const render1 = () => {
+      const { ctx, width, height } = setup1;
+      ctx.clearRect(0, 0, width, height);
+      ctx.font = `${charSize}px monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      
+      const cols = Math.ceil(width / charSize);
+      const rows = Math.ceil(height / charSize);
+      
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const px = x * charSize + charSize/2;
+          const py = y * charSize + charSize/2;
+          
+          // Multiple node centers
+          const nodes = [
+            { x: width * 0.3, y: height * 0.3 },
+            { x: width * 0.7, y: height * 0.4 },
+            { x: width * 0.5, y: height * 0.7 },
+            { x: width * 0.2, y: height * 0.6 },
+            { x: width * 0.8, y: height * 0.75 }
+          ];
+          
+          let minDist = 999;
+          nodes.forEach(n => {
+            const d = Math.sqrt((px - n.x) ** 2 + (py - n.y) ** 2);
+            minDist = Math.min(minDist, d);
+          });
+          
+          const wave = Math.sin(minDist * 0.08 - time1 * 2) * 0.5 + 0.5;
+          const index = Math.floor(wave * densityChars.length * 0.6);
+          const char = densityChars[Math.min(index, densityChars.length - 1)];
+          
+          if (minDist < 15) {
+            ctx.fillStyle = '#FFB524';
+            ctx.fillText('●', px, py);
+          } else if (char !== ' ') {
+            ctx.fillStyle = `rgba(139, 124, 255, ${wave * 0.8})`;
+            ctx.fillText(char, px, py);
+          }
+        }
+      }
+      time1 += 0.02;
+      requestAnimationFrame(render1);
+    };
+    render1();
+  }
+
+  // 2. DEVELOP - Matrix code rain
+  const canvas2 = document.getElementById('ascii-develop');
+  const setup2 = setupCanvas(canvas2);
+  if (setup2) {
+    const drops = [];
+    const cols2 = Math.ceil(setup2.width / charSize);
+    for (let i = 0; i < cols2; i++) {
+      drops[i] = Math.random() * -100;
+    }
+    
+    const render2 = () => {
+      const { ctx, width, height } = setup2;
+      ctx.fillStyle = 'rgba(13, 16, 51, 0.1)';
+      ctx.fillRect(0, 0, width, height);
+      ctx.font = `${charSize}px monospace`;
+      ctx.textAlign = 'center';
+      
+      for (let i = 0; i < drops.length; i++) {
+        const char = String.fromCharCode(0x30A0 + Math.random() * 96);
+        const x = i * charSize + charSize/2;
+        const y = drops[i] * charSize;
+        
+        ctx.fillStyle = '#FFB524';
+        ctx.fillText(char, x, y);
+        
+        ctx.fillStyle = 'rgba(139, 124, 255, 0.5)';
+        ctx.fillText(char, x, y - charSize);
+        ctx.fillStyle = 'rgba(139, 124, 255, 0.2)';
+        ctx.fillText(char, x, y - charSize * 2);
+        
+        if (y > height && Math.random() > 0.98) {
+          drops[i] = 0;
+        }
+        drops[i] += 0.5;
+      }
+      requestAnimationFrame(render2);
+    };
+    render2();
+  }
+
+  // 3. DEPLOY - Flow/wave pattern
+  const canvas3 = document.getElementById('ascii-deploy');
+  const setup3 = setupCanvas(canvas3);
+  if (setup3) {
+    let time3 = 0;
+    const render3 = () => {
+      const { ctx, width, height } = setup3;
+      ctx.clearRect(0, 0, width, height);
+      ctx.font = `${charSize}px monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      
+      const cols = Math.ceil(width / charSize);
+      const rows = Math.ceil(height / charSize);
+      
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const px = x * charSize + charSize/2;
+          const py = y * charSize + charSize/2;
+          
+          const wave = Math.sin(x * 0.15 + time3 * 3) * Math.cos(y * 0.1 + time3) * 0.5 + 0.5;
+          const flow = Math.sin((x + y) * 0.1 - time3 * 2) * 0.5 + 0.5;
+          const combined = (wave + flow) / 2;
+          
+          const arrows = ['→', '↗', '↘', '⟶', '»', '›'];
+          const arrowIndex = Math.floor(combined * arrows.length);
+          const char = combined > 0.3 ? arrows[arrowIndex % arrows.length] : ' ';
+          
+          if (char !== ' ') {
+            const alpha = combined * 0.9;
+            ctx.fillStyle = combined > 0.7 ? `rgba(255, 181, 36, ${alpha})` : `rgba(139, 124, 255, ${alpha})`;
+            ctx.fillText(char, px, py);
+          }
+        }
+      }
+      time3 += 0.015;
+      requestAnimationFrame(render3);
+    };
+    render3();
+  }
+
+  // 4. DEMOCRATIZE - Interconnected web
+  const canvas4 = document.getElementById('ascii-democratize');
+  const setup4 = setupCanvas(canvas4);
+  if (setup4) {
+    let time4 = 0;
+    const render4 = () => {
+      const { ctx, width, height } = setup4;
+      ctx.clearRect(0, 0, width, height);
+      ctx.font = `${charSize}px monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      
+      const cols = Math.ceil(width / charSize);
+      const rows = Math.ceil(height / charSize);
+      
+      // Grid of interconnected points
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const px = x * charSize + charSize/2;
+          const py = y * charSize + charSize/2;
+          
+          const pulse = Math.sin(x * 0.2 + time4) * Math.sin(y * 0.2 + time4 * 1.3);
+          const grid = ((x + y) % 3 === 0) ? 1 : 0;
+          const wave = Math.sin(Math.sqrt(x*x + y*y) * 0.2 - time4 * 2) * 0.5 + 0.5;
+          
+          if (grid && wave > 0.3) {
+            ctx.fillStyle = `rgba(255, 181, 36, ${wave})`;
+            ctx.fillText('◆', px, py);
+          } else if (pulse > 0.3) {
+            ctx.fillStyle = `rgba(139, 124, 255, ${pulse * 0.6})`;
+            const chars = ['+', '×', '·', '○'];
+            ctx.fillText(chars[Math.floor(pulse * chars.length)], px, py);
+          }
+        }
+      }
+      time4 += 0.02;
+      requestAnimationFrame(render4);
+    };
+    render4();
+  }
+};
+
+// Init ASCII canvases when DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAsciiCanvases);
+} else {
+  setTimeout(initAsciiCanvases, 100);
 }
 </script>
 </body>

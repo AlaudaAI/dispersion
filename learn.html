@@ -1703,8 +1703,106 @@ header {
   </div>
 </header>
 
+<style>
+/* Article Cards */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.article-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.article-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.article-card__image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #e07856 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-card__image-icon {
+  font-size: 48px;
+  color: white;
+  opacity: 0.8;
+}
+
+.article-card__body {
+  padding: var(--space-lg);
+}
+
+.article-card__tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.article-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+.article-card__excerpt {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.article-card__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.article-card__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.article-card:hover .article-card__link svg {
+  transform: translateX(4px);
+}
+</style>
+
 <!-- LEARN/NEWSROOM PAGE CONTENT -->
-<section class="team-section" style="padding-top: 120px; border-top: none; min-height: 70vh; position: relative;">
+<section class="team-section" style="padding-top: 120px; border-top: none; min-height: 80vh; position: relative;">
   <div class="team-inner">
     <div class="team-header" style="position: relative; z-index: 2;">
       <div class="section-header" style="justify-content: center;">
@@ -1718,12 +1816,76 @@ header {
     </div>
     
     <!-- Crystal decoration -->
-    <img src="assets/crystal.0889931.png" alt="" style="position: absolute; right: 5%; top: 20%; width: 200px; opacity: 0.8; z-index: 1;">
+    <img src="assets/crystal.0889931.png" alt="" style="position: absolute; right: 5%; top: 10%; width: 180px; opacity: 0.7; z-index: 1;">
     
-    <!-- Coming soon / placeholder -->
-    <div style="text-align: center; margin-top: var(--space-2xl); position: relative; z-index: 2;">
-      <p style="font-size: 18px; color: var(--text-secondary);">Stay tuned for announcements and press releases.</p>
-      <a href="mailto:media@dispersion.xyz" style="display: inline-block; margin-top: var(--space-lg); padding: 14px 32px; background: var(--accent-gold); color: var(--text-primary); font-weight: 600; font-size: 14px; border-radius: 4px; text-decoration: none;">Media Inquiries</a>
+    <!-- Articles Grid -->
+    <div class="articles-grid" style="position: relative; z-index: 2;">
+      <!-- Press Kit Article -->
+      <a href="https://dispersion.xyz/learn/254/dispersion-capital-press-kit" target="_blank" class="article-card">
+        <div class="article-card__image">
+          <img src="assets/crystal.0889931.png" alt="Press Kit" style="object-fit: contain; padding: 40px; background: linear-gradient(135deg, #1a1b4b 0%, #2a2b6b 100%);">
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag">Media</span>
+          <h3 class="article-card__title">Dispersion Capital Press Kit</h3>
+          <p class="article-card__excerpt">Access our press kit including company boilerplate, Patrick Chang bio, and downloadable photos for media use.</p>
+          <span class="article-card__link">
+            Read More 
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+      
+      <!-- About Dispersion Economy -->
+      <a href="https://dispersion.xyz/about-us" target="_blank" class="article-card">
+        <div class="article-card__image" style="background: linear-gradient(135deg, #6b7cff 0%, #a8b4ff 100%);">
+          <svg class="article-card__image-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 80px;">
+            <path d="M54.93 24.4852C54.6281 23.9384 54.1851 23.4827 53.6471 23.1657C53.109 22.8486 52.4957 22.6817 51.8712 22.6825H47.5564L50.5395 17.7977C50.8713 17.267 51.0542 16.6568 51.069 16.031C51.0839 15.4053 50.9301 14.7871 50.6239 14.2412C50.3176 13.6953 49.8702 13.2419 49.3285 12.9284C48.7867 12.6149 48.1706 12.4529 47.5447 12.4594H42.596L45.8176 7.18506C46.1509 6.65421 46.3351 6.04338 46.3507 5.41676C46.3663 4.79015 46.2128 4.1709 45.9064 3.6241C45.6 3.0773 45.1519 2.62314 44.6093 2.30936C44.0667 1.99558 43.4496 1.83377 42.8228 1.84093H18.6492C18.0483 1.84349 17.4581 1.99915 16.9341 2.2932C16.4101 2.58725 15.9696 3.00998 15.6544 3.52151L0.534981 28.3057C0.203055 28.8345 0.0190799 29.4426 0.00224555 30.0667C-0.0145888 30.6908 0.136334 31.3079 0.439272 31.8538C0.74221 32.3997 1.18607 32.8543 1.72455 33.1702C2.26303 33.4861 2.87641 33.6518 3.50071 33.6499H8.44941L5.24526 38.9242C4.91197 39.4551 4.72783 40.0659 4.71221 40.6925C4.69658 41.3191 4.85005 41.9384 5.15647 42.4852C5.46289 43.032 5.91096 43.4861 6.45357 43.7999C6.99618 44.1137 7.6133 44.2755 8.24007 44.2683H12.5549L9.57174 49.1531C9.23997 49.6838 9.05709 50.294 9.04225 50.9198C9.02741 51.5455 9.18117 52.1637 9.48741 52.7096C9.79365 53.2555 10.2411 53.7089 10.7828 54.0224C11.3246 54.3359 11.9407 54.4979 12.5665 54.4914H36.7402C37.3412 54.4899 37.932 54.3347 38.4561 54.0406C38.9803 53.7464 39.4206 53.3231 39.735 52.8108L54.8835 28.0266C55.2066 27.4942 55.3813 26.885 55.3895 26.2622C55.3977 25.6395 55.239 25.0259 54.93 24.4852Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag">About</span>
+          <h3 class="article-card__title">The Dispersion Economy</h3>
+          <p class="article-card__excerpt">Learn about our vision for a multi-chain, multi-currency, and multi-platform world powering the decentralized future.</p>
+          <span class="article-card__link">
+            Learn More 
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+      
+      <!-- Portfolio -->
+      <a href="https://dispersion.xyz/portfolio" target="_blank" class="article-card">
+        <div class="article-card__image" style="background: linear-gradient(135deg, #FFB524 0%, #e07856 100%);">
+          <svg class="article-card__image-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" style="width: 64px; height: 64px;">
+            <path d="M21 7.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7.5"/>
+            <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <path d="M3 7.5h18"/>
+            <path d="M8 3h8l2 4.5H6L8 3z"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag">Investments</span>
+          <h3 class="article-card__title">Our Portfolio</h3>
+          <p class="article-card__excerpt">Explore our investments in foundational technologies including Alchemy, Dapper Labs, Flow, Forte, Syndicate, and more.</p>
+          <span class="article-card__link">
+            View Portfolio 
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+    <!-- Media Contact -->
+    <div style="text-align: center; margin-top: var(--space-3xl); position: relative; z-index: 2;">
+      <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: var(--space-md);">For media inquiries and press requests</p>
+      <a href="mailto:media@dispersion.xyz" style="display: inline-block; padding: 14px 32px; background: var(--accent-gold); color: var(--text-primary); font-weight: 600; font-size: 14px; border-radius: 4px; text-decoration: none;">Media Inquiries →</a>
     </div>
   </div>
 </section>

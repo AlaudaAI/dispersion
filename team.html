@@ -1666,17 +1666,16 @@ header {
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" class="brand">
+    <a href="index.html" class="brand">
       <img src="assets/logo-dark.svg" alt="Dispersion Capital">
     </a>
     <nav class="nav-center">
-      <a href="#portfolio" class="nav-link">Portfolio</a>
-      <a href="#about" class="nav-link">About</a>
+      <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+      <a href="index.html#about" class="nav-link">About</a>
       <a href="team.html" class="nav-link">Team</a>
-      <a href="#thesis" class="nav-link">Investment Thesis</a>
+      <a href="index.html#thesis" class="nav-link">Investment Thesis</a>
     </nav>
     <a href="mailto:pitch@dispersion.xyz" class="header-cta">SEND US A PITCH</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -1686,110 +1685,16 @@ header {
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#portfolio">Portfolio</a>
-    <a href="#about">About</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="index.html#about">About</a>
     <a href="team.html">Team</a>
-    <a href="#thesis">Investment Thesis</a>
+    <a href="index.html#thesis">Investment Thesis</a>
     <a href="mailto:pitch@dispersion.xyz" class="mobile-cta">SEND US A PITCH</a>
   </div>
 </header>
 
-<!-- SVG Filter for Lava Goo Effect -->
-<svg xmlns="http://www.w3.org/2000/svg" style="position: fixed; top: 0; left: 0; width: 0; height: 0;">
-  <defs>
-    <filter id="lava-goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-      <feBlend in="SourceGraphic" in2="goo" />
-    </filter>
-  </defs>
-</svg>
-
-<!-- HERO -->
-<section class="hero">
-  <!-- Lava Bubbles Background -->
-  <div class="lava-container">
-    <div class="lava-bubbles">
-      <div class="lava-bubble bubble-yellow-1"></div>
-      <div class="lava-bubble bubble-yellow-2"></div>
-      <div class="lava-bubble bubble-yellow-3"></div>
-      <div class="lava-bubble bubble-purple-1"></div>
-      <div class="lava-bubble bubble-purple-2"></div>
-      <div class="lava-bubble bubble-purple-3"></div>
-    </div>
-  </div>
-  
-  <div class="hero-content">
-    <p class="hero-tagline">Decentralize. Develop. Deploy. Democratize.</p>
-    <h1 class="hero-headline">Dispersion Capital</h1>
-    <p class="hero-subheadline">Pioneering the decentralized future</p>
-    <a href="#portfolio" class="hero-link">
-      VIEW OUR PORTFOLIO <span class="arrow">→</span>
-    </a>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="portfolio-section" id="portfolio">
-  <div class="portfolio-inner">
-    <div class="section-header">
-      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
-      </svg>
-      <span>The teams we've backed</span>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="assets/dapper.04e87ca.png" alt="Dapper Labs">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/alchemy.39d7370.png" alt="Alchemy">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/forte.1f5a770.png" alt="Forte">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/spaceandtime.1ddac19.png" alt="Space and Time">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/metrika.558771d.png" alt="Metrika">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/branch.f5692a8.png" alt="Branch">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/volterra.adde29f.png" alt="Volterra">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/cubesecurity.3e77549.png" alt="Cube Security">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/zettablock.7d327b2.png" alt="ZettaBlock">
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/web3.0e5ff08.png" alt="Web3" style="max-height: 50px;">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT QUOTE -->
-<section class="about-quote" id="about">
-  <div class="about-inner">
-    <div class="about-image">
-      <div id="globe-canvas" style="width: 100%; height: 400px; border-radius: 16px; min-height: 220px;"></div>
-    </div>
-    <div class="about-content">
-      <blockquote>"Dispersion Capital invests in the foundational technologies of a multi-chain, multi-model, multi-currency, and multi-platform world."</blockquote>
-      <p>Developers need a way to build functional, accessible, scalable decentralized applications. The vision is there, but the infrastructure isn't — yet.</p>
-      <p>That's why we're here. We work with builders that are solving these gaps and making mass adoption of web3 possible.</p>
-      <p>We believe blockchain will revolutionize existing infrastructure and the way we do business.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM SECTION -->
-<section class="team-section" id="team">
+<!-- TEAM PAGE CONTENT -->
+<section class="team-section" style="padding-top: 120px; border-top: none;">
   <div class="team-inner">
     <div class="team-header">
       <div class="section-header" style="justify-content: center;">
@@ -1908,707 +1813,59 @@ header {
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="testimonials-inner">
-    <div class="section-header">
-      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
-      </svg>
-      <span>Founder Testimonials</span>
-    </div>
-    
-    <div class="testimonials-carousel" id="testimonialCarousel">
-      <div class="testimonial-track" id="testimonialTrack">
-        <!-- Card 1: Dapper Labs -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/dapper.04e87ca.png" alt="Dapper Labs">
-          </div>
-          <p class="testimonial-quote">"Patrick has been an incredible investor for Dapper Labs. He has done above and beyond supporting us during the rough times, being a great sounding board for our strategies and tactics and making impactful introductions when needed."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/roham.479dc0c.png" alt="Roham Gharegozlou" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Roham Gharegozlou</span>
-                <span class="author-role">CEO, Co-Founder</span>
-              </div>
-            </div>
-            <div class="testimonial-author">
-              <img src="assets/mik.50894b4.png" alt="Mik Naayam" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Mik Naayam</span>
-                <span class="author-role">Co-Founder Dapper Labs</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 2: Alchemy -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/alchemy.39d7370.png" alt="Alchemy">
-          </div>
-          <p class="testimonial-quote">"Patrick is one of the hardest working individuals in the business. He immediately understood our technical vision. Patrick is a gem. He's always incredibly supportive and brings the positive energy. A pleasure to work with."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/joe.00eecec.png" alt="Joe Lau" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Joe Lau</span>
-                <span class="author-role">Co-Founder</span>
-              </div>
-            </div>
-            <div class="testimonial-author">
-              <img src="assets/nikil.a1d8386.png" alt="Nikil Viswanathan" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Nikil Viswanathan</span>
-                <span class="author-role">CEO, Co-Founder Alchemy</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 3: Metrika -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/metrika.558771d.png" alt="Metrika">
-          </div>
-          <p class="testimonial-quote">"Patrick has been helpful in bringing other investors, prospective customers and partners. Patrick's amazing network combined with his industry knowledge has helped Metrika tremendously. He consistently separates the signal from the noise."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/alex.3fe1e27.png" alt="Nikos Andrikogiannopoulos" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Nikos Andrikogiannopoulos</span>
-                <span class="author-role">CEO, Founder</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 4: Forte -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/forte.1f5a770.png" alt="Forte">
-          </div>
-          <p class="testimonial-quote">"Patrick has an outstanding grasp on blockchain concepts and his experience gives him a unique perspective on the industry. He deeply understands our vision, and aptly broke it down into an analogy of an 'economics engine' for gaming."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/josh.b58cda7.png" alt="Josh Williams" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Josh Williams</span>
-                <span class="author-role">CEO Forte</span>
-              </div>
-            </div>
-            <div class="testimonial-author">
-              <img src="assets/linda.3a11c1e.png" alt="Linda Chew" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Linda Chew</span>
-                <span class="author-role">VP Strategy & Operations</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 5: Space and Time -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/spaceandtime.1ddac19.png" alt="Space and Time">
-          </div>
-          <p class="testimonial-quote">"Patrick is our secret gem. I tell everyone I talk to that Dispersion Capital is a no-brainer cap table VC, no matter the round or room. It is extremely rare to have a VC partner at the GTM level who puts in the effort to work side by side."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/nate.ff3f28a.png" alt="Nate Holiday" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Nate Holiday</span>
-                <span class="author-role">CEO, Co-Founder</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 6: Branch -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/branch.f5692a8.png" alt="Branch">
-          </div>
-          <p class="testimonial-quote">"Patrick worked so hard for us, that I consider him one of our early team members. Through grit and tireless effort, he drove one of our earliest partnerships with Samsung that ultimately uncovered the massive opportunity we have today."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/alex-branch.2898e5c.png" alt="Alex Austin" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Alex Austin</span>
-                <span class="author-role">CEO, Co-Founder Branch Metrics</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 7: Volterra -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/volterra.adde29f.png" alt="Volterra">
-          </div>
-          <p class="testimonial-quote">"Patrick has been a great partner and investor for us throughout the journey. Patrick started working with us from the beginning of Volterra and helped us prepare our market opportunity and associated investment thesis."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/ankur.376c9d1.png" alt="Ankur Singla" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Ankur Singla</span>
-                <span class="author-role">Founder, CEO Volterra</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 8: Cube Security -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/cubesecurity.3e77549.png" alt="Cube Security">
-          </div>
-          <p class="testimonial-quote">"Patrick and Dispersion Capital are all about supporting founders. They offer more than just financial backing, as they are always on the lookout for fresh business opportunities, awesome team members, and helpful advisors."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/einaras.41d2226.png" alt="Einaras von Gravrock" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Einaras von Gravrock</span>
-                <span class="author-role">CEO, Founder</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 9: ZettaBlock -->
-        <div class="testimonial-card">
-          <div class="testimonial-logo">
-            <img src="assets/zettablock.7d327b2.png" alt="ZettaBlock">
-          </div>
-          <p class="testimonial-quote">"ZettaBlock owes a great deal of its success to Patrick, who has been an investor and mentor since day zero. What sets Patrick apart is his exceptional dedication—he's not just capital, but a true 24/7 partner."</p>
-          <div class="testimonial-authors">
-            <div class="testimonial-author">
-              <img src="assets/chi.1e35112.png" alt="Chi Zhang" class="author-avatar">
-              <div class="author-info">
-                <span class="author-name">Chi Zhang</span>
-                <span class="author-role">CEO, Co-Founder</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-<!-- WHAT WE FUND -->
-<section class="practice-areas" id="thesis">
-  <div class="practice-inner">
-    <div class="practice-header">
-      <div class="section-header" style="margin-bottom: var(--space-lg);">
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
-        </svg>
-        <span>What { And Why } We Fund</span>
-      </div>
-      <h2>Investment<br>Thesis</h2>
-      <p>We support projects that create decentralized infrastructure, unlocking transformative businesses across the web3 ecosystem.</p>
-    </div>
-    <div class="practice-grid">
-      <div class="practice-card">
-        <div class="practice-card-content">
-          <div class="card-number">01</div>
-          <h3>Decentralize</h3>
-          <p>Web3 and decentralized infrastructure redefine applications, prioritizing ownership, interoperability, and compute/storage capabilities.</p>
-        </div>
-        <div class="card-image">
-          <canvas id="ascii-decentralize" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
-        </div>
-      </div>
-      <div class="practice-card">
-        <div class="practice-card-content">
-          <div class="card-number">02</div>
-          <h3>Develop</h3>
-          <p>Empower decentralized infrastructure with reliable tools: architecture, cybersecurity, privacy tech, gateway protocols, decentralized identity.</p>
-        </div>
-        <div class="card-image">
-          <canvas id="ascii-develop" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
-        </div>
-      </div>
-      <div class="practice-card">
-        <div class="practice-card-content">
-          <div class="card-number">03</div>
-          <h3>Deploy</h3>
-          <p>Deploying web3 requires a comprehensive suite of tools, protocols, and infrastructure to implement cutting-edge, decentralized services.</p>
-        </div>
-        <div class="card-image">
-          <canvas id="ascii-deploy" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
-        </div>
-      </div>
-      <div class="practice-card">
-        <div class="practice-card-content">
-          <div class="card-number">04</div>
-          <h3>Democratize</h3>
-          <p>Web3 democratizes tech, powering a trustless, interconnected economy. It embraces incentives, openness, collaboration, and inclusivity.</p>
-        </div>
-        <div class="card-image">
-          <canvas id="ascii-democratize" style="width:100%; height:100%; display:block; border-radius:12px; background:#0d1033;"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA SECTION -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <h2>Are you building<br><span class="accent">the decentralized future?</span></h2>
-    <a href="mailto:pitch@dispersion.xyz" class="cta-btn">
-      SEND US A PITCH <span class="arrow">→</span>
-    </a>
-  </div>
-</section>
-
 <!-- FOOTER -->
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-left">
-      <h2>Dispersion<br><span class="accent">Capital</span></h2>
-      <p class="footer-tagline">Pioneering the decentralized future. Investing in foundational web3 infrastructure.</p>
-      <a href="mailto:pitch@dispersion.xyz" class="footer-cta-btn">SEND US A PITCH <span>→</span></a>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/company/dispersion-capital" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://twitter.com/DispersionVC" target="_blank" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.instagram.com/dispersioncapital/" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
+    <div class="footer-top">
+      <div class="footer-left">
+        <div class="footer-brand-container">
+          <img src="assets/logo-light.svg" alt="Dispersion Capital" class="footer-logo">
+        </div>
+        <p class="footer-tagline">Pioneering the Decentralized Future</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-nav">
+          <a href="index.html#portfolio">Portfolio</a>
+          <a href="index.html#about">About</a>
+          <a href="team.html">Team</a>
+          <a href="index.html#thesis">Investment Thesis</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://twitter.com/dispersionvc" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/dispersion-capital" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <a href="mailto:pitch@dispersion.xyz" class="footer-cta-btn">SEND US A PITCH <span>→</span></a>
       </div>
     </div>
-    <div class="footer-right">
-      <div class="footer-link-group">
-        <h4>Company</h4>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#thesis">Investment Thesis</a>
-      </div>
-      <div class="footer-link-group">
-        <h4>Connect</h4>
-        <a href="mailto:pitch@dispersion.xyz">Send a Pitch</a>
-        <a href="mailto:media@dispersion.xyz">Media Inquiries</a>
-        <a href="#">Newsletter</a>
-      </div>
-      <div class="footer-link-group">
-        <h4>Legal</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
+    <div class="footer-bottom">
+      <p>© 2025 Dispersion Capital. All rights reserved.</p>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2024 Dispersion Capital. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
+// Mobile menu toggle
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-});
-
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
   });
-});
-
-// Testimonials - Duplicate cards for seamless infinite scroll
-(function() {
-  const track = document.getElementById('testimonialTrack');
-  if (!track) return;
   
-  // Clone all cards and append for seamless loop
-  const cards = track.querySelectorAll('.testimonial-card');
-  cards.forEach(card => {
-    const clone = card.cloneNode(true);
-    track.appendChild(clone);
-  });
-})();
-</script>
-
-<script>
-// Three.js Animated Globe
-const initGlobe = () => {
-  const container = document.getElementById('globe-canvas');
-  if (!container) return;
-  
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  
-  renderer.setSize(container.offsetWidth, container.offsetHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  container.appendChild(renderer.domElement);
-
-  camera.position.z = 240;
-
-  // Globe wireframe
-  const globeRadius = 80;
-  const geometry = new THREE.SphereGeometry(globeRadius, 32, 32);
-  const wireframe = new THREE.WireframeGeometry(geometry);
-  const lineMaterial = new THREE.LineBasicMaterial({ 
-    color: 0xFFB524, 
-    transparent: true, 
-    opacity: 0.35 
-  });
-  const sphereLine = new THREE.LineSegments(wireframe, lineMaterial);
-  scene.add(sphereLine);
-
-  // Hub locations - evenly distributed globally with more in southern hemisphere
-  const hubs = [
-    // Northern Hemisphere (fewer)
-    { name: 'London', lat: 51.5, lon: -0.1 },
-    { name: 'New York', lat: 40.7, lon: -74.0 },
-    { name: 'Tokyo', lat: 35.7, lon: 139.7 },
-    { name: 'LA', lat: 34.1, lon: -118.2 },
-    { name: 'Mumbai', lat: 19.1, lon: 72.9 },
-    // Equatorial
-    { name: 'Singapore', lat: 1.4, lon: 103.8 },
-    { name: 'Nairobi', lat: -1.3, lon: 36.8 },
-    { name: 'Quito', lat: -0.2, lon: -78.5 },
-    { name: 'Jakarta', lat: -6.2, lon: 106.8 },
-    { name: 'Lagos', lat: 6.5, lon: 3.4 },
-    // Southern Hemisphere (more dots)
-    { name: 'Sydney', lat: -33.9, lon: 151.2 },
-    { name: 'Sao Paulo', lat: -23.6, lon: -46.6 },
-    { name: 'Cape Town', lat: -33.9, lon: 18.4 },
-    { name: 'Buenos Aires', lat: -34.6, lon: -58.4 },
-    { name: 'Auckland', lat: -36.8, lon: 174.8 },
-    { name: 'Santiago', lat: -33.4, lon: -70.6 },
-    { name: 'Perth', lat: -31.9, lon: 115.9 },
-    { name: 'Melbourne', lat: -37.8, lon: 144.9 },
-    { name: 'Johannesburg', lat: -26.2, lon: 28.0 },
-    { name: 'Lima', lat: -12.0, lon: -77.0 },
-    { name: 'Montevideo', lat: -34.9, lon: -56.2 },
-    { name: 'Bogota', lat: -4.7, lon: -74.1 },
-    // Deep South
-    { name: 'Christchurch', lat: -43.5, lon: 172.6 },
-    { name: 'Ushuaia', lat: -54.8, lon: -68.3 },
-    { name: 'Hobart', lat: -42.9, lon: 147.3 },
-    { name: 'Punta Arenas', lat: -53.2, lon: -70.9 },
-    { name: 'Dunedin', lat: -45.9, lon: 170.5 },
-    { name: 'Invercargill', lat: -46.4, lon: 168.4 }
-  ];
-
-  const convertCoords = (lat, lon, radius) => {
-    const phi = (90 - lat) * (Math.PI / 180);
-    const theta = (lon + 180) * (Math.PI / 180);
-    return new THREE.Vector3(
-      -radius * Math.sin(phi) * Math.cos(theta),
-      radius * Math.cos(phi),
-      radius * Math.sin(phi) * Math.sin(theta)
-    );
-  };
-
-  const hubGroup = new THREE.Group();
-  scene.add(hubGroup);
-
-  hubs.forEach((hub, i) => {
-    const pos = convertCoords(hub.lat, hub.lon, globeRadius);
-    const size = 0.8 + Math.random() * 0.8; // Vary size 0.8-1.6
-    const dotGeo = new THREE.SphereGeometry(size, 8, 8);
-    const opacity = 0.5 + Math.random() * 0.4; // Vary opacity 0.5-0.9
-    const dotMat = new THREE.MeshBasicMaterial({ color: 0xFFB524, transparent: true, opacity: opacity });
-    const dot = new THREE.Mesh(dotGeo, dotMat);
-    dot.position.copy(pos);
-    hubGroup.add(dot);
-  });
-
-  // Arcs between hubs
-  const arcMaterial = new THREE.LineBasicMaterial({ 
-    color: 0x8b7cff, 
-    transparent: true, 
-    opacity: 0.4 
-  });
-
-  const createArc = (startHub, endHub) => {
-    const start = convertCoords(startHub.lat, startHub.lon, globeRadius);
-    const end = convertCoords(endHub.lat, endHub.lon, globeRadius);
-    
-    const mid = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
-    const distance = start.distanceTo(end);
-    mid.normalize().multiplyScalar(globeRadius + distance * 0.4);
-
-    const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
-    const points = curve.getPoints(50);
-    const arcGeo = new THREE.BufferGeometry().setFromPoints(points);
-    const arc = new THREE.Line(arcGeo, arcMaterial);
-    hubGroup.add(arc);
-
-    // Spark traveling along arc
-    const sparkGeo = new THREE.SphereGeometry(0.8, 8, 8);
-    const sparkMat = new THREE.MeshBasicMaterial({ color: 0xFFB524, transparent: true, opacity: 1 });
-    const spark = new THREE.Mesh(sparkGeo, sparkMat);
-    hubGroup.add(spark);
-
-    return { curve, spark, t: Math.random() };
-  };
-
-  const activeArcs = [];
-  // Only create ~8-10 arcs between random hub pairs
-  const arcCount = 8;
-  for (let a = 0; a < arcCount; a++) {
-    const i = Math.floor(Math.random() * hubs.length);
-    let j = Math.floor(Math.random() * hubs.length);
-    while (j === i) j = Math.floor(Math.random() * hubs.length);
-    activeArcs.push(createArc(hubs[i], hubs[j]));
-  }
-
-  const animate = () => {
-    requestAnimationFrame(animate);
-    
-    sphereLine.rotation.y += 0.002;
-    hubGroup.rotation.y += 0.002;
-
-    activeArcs.forEach(arc => {
-      arc.t += 0.004;
-      if (arc.t > 1) arc.t = 0;
-      const pos = arc.curve.getPoint(arc.t);
-      arc.spark.position.copy(pos);
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
     });
-
-    renderer.render(scene, camera);
-  };
-
-  animate();
-
-  window.addEventListener('resize', () => {
-    camera.aspect = container.offsetWidth / container.offsetHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.offsetWidth, container.offsetHeight);
   });
-};
-
-// Init when DOM ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initGlobe);
-} else {
-  initGlobe();
 }
 </script>
 
-<script>
-// ASCII Canvas Visualizations for 4D Section
-const initAsciiCanvases = () => {
-  const densityChars = " .'`^,:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
-  const charSize = 10;
-  
-  // Setup canvas with proper DPI
-  const setupCanvas = (canvas) => {
-    if (!canvas) return null;
-    const parent = canvas.parentElement;
-    const width = parent.clientWidth || 300;
-    const height = parent.clientHeight || 200;
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    const ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    return { ctx, width, height };
-  };
-
-  // 1. DECENTRALIZE - Networked nodes
-  const canvas1 = document.getElementById('ascii-decentralize');
-  const setup1 = setupCanvas(canvas1);
-  if (setup1) {
-    let time1 = 0;
-    const render1 = () => {
-      const { ctx, width, height } = setup1;
-      ctx.clearRect(0, 0, width, height);
-      ctx.font = `${charSize}px monospace`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      
-      const cols = Math.ceil(width / charSize);
-      const rows = Math.ceil(height / charSize);
-      
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          const px = x * charSize + charSize/2;
-          const py = y * charSize + charSize/2;
-          
-          // Multiple node centers
-          const nodes = [
-            { x: width * 0.3, y: height * 0.3 },
-            { x: width * 0.7, y: height * 0.4 },
-            { x: width * 0.5, y: height * 0.7 },
-            { x: width * 0.2, y: height * 0.6 },
-            { x: width * 0.8, y: height * 0.75 }
-          ];
-          
-          let minDist = 999;
-          nodes.forEach(n => {
-            const d = Math.sqrt((px - n.x) ** 2 + (py - n.y) ** 2);
-            minDist = Math.min(minDist, d);
-          });
-          
-          const wave = Math.sin(minDist * 0.08 - time1 * 2) * 0.5 + 0.5;
-          const index = Math.floor(wave * densityChars.length * 0.6);
-          const char = densityChars[Math.min(index, densityChars.length - 1)];
-          
-          if (minDist < 15) {
-            ctx.fillStyle = '#FFB524';
-            ctx.fillText('●', px, py);
-          } else if (char !== ' ') {
-            ctx.fillStyle = `rgba(139, 124, 255, ${wave * 0.8})`;
-            ctx.fillText(char, px, py);
-          }
-        }
-      }
-      time1 += 0.02;
-      requestAnimationFrame(render1);
-    };
-    render1();
-  }
-
-  // 2. DEVELOP - Matrix code rain
-  const canvas2 = document.getElementById('ascii-develop');
-  const setup2 = setupCanvas(canvas2);
-  if (setup2) {
-    const drops = [];
-    const cols2 = Math.ceil(setup2.width / charSize);
-    for (let i = 0; i < cols2; i++) {
-      drops[i] = Math.random() * -100;
-    }
-    
-    const render2 = () => {
-      const { ctx, width, height } = setup2;
-      ctx.fillStyle = 'rgba(13, 16, 51, 0.1)';
-      ctx.fillRect(0, 0, width, height);
-      ctx.font = `${charSize}px monospace`;
-      ctx.textAlign = 'center';
-      
-      for (let i = 0; i < drops.length; i++) {
-        const char = String.fromCharCode(0x30A0 + Math.random() * 96);
-        const x = i * charSize + charSize/2;
-        const y = drops[i] * charSize;
-        
-        ctx.fillStyle = '#FFB524';
-        ctx.fillText(char, x, y);
-        
-        ctx.fillStyle = 'rgba(139, 124, 255, 0.5)';
-        ctx.fillText(char, x, y - charSize);
-        ctx.fillStyle = 'rgba(139, 124, 255, 0.2)';
-        ctx.fillText(char, x, y - charSize * 2);
-        
-        if (y > height && Math.random() > 0.98) {
-          drops[i] = 0;
-        }
-        drops[i] += 0.5;
-      }
-      requestAnimationFrame(render2);
-    };
-    render2();
-  }
-
-  // 3. DEPLOY - Flow/wave pattern
-  const canvas3 = document.getElementById('ascii-deploy');
-  const setup3 = setupCanvas(canvas3);
-  if (setup3) {
-    let time3 = 0;
-    const render3 = () => {
-      const { ctx, width, height } = setup3;
-      ctx.clearRect(0, 0, width, height);
-      ctx.font = `${charSize}px monospace`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      
-      const cols = Math.ceil(width / charSize);
-      const rows = Math.ceil(height / charSize);
-      
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          const px = x * charSize + charSize/2;
-          const py = y * charSize + charSize/2;
-          
-          const wave = Math.sin(x * 0.15 + time3 * 3) * Math.cos(y * 0.1 + time3) * 0.5 + 0.5;
-          const flow = Math.sin((x + y) * 0.1 - time3 * 2) * 0.5 + 0.5;
-          const combined = (wave + flow) / 2;
-          
-          const arrows = ['→', '↗', '↘', '⟶', '»', '›'];
-          const arrowIndex = Math.floor(combined * arrows.length);
-          const char = combined > 0.3 ? arrows[arrowIndex % arrows.length] : ' ';
-          
-          if (char !== ' ') {
-            const alpha = combined * 0.9;
-            ctx.fillStyle = combined > 0.7 ? `rgba(255, 181, 36, ${alpha})` : `rgba(139, 124, 255, ${alpha})`;
-            ctx.fillText(char, px, py);
-          }
-        }
-      }
-      time3 += 0.015;
-      requestAnimationFrame(render3);
-    };
-    render3();
-  }
-
-  // 4. DEMOCRATIZE - Interconnected web
-  const canvas4 = document.getElementById('ascii-democratize');
-  const setup4 = setupCanvas(canvas4);
-  if (setup4) {
-    let time4 = 0;
-    const render4 = () => {
-      const { ctx, width, height } = setup4;
-      ctx.clearRect(0, 0, width, height);
-      ctx.font = `${charSize}px monospace`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      
-      const cols = Math.ceil(width / charSize);
-      const rows = Math.ceil(height / charSize);
-      
-      // Grid of interconnected points
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          const px = x * charSize + charSize/2;
-          const py = y * charSize + charSize/2;
-          
-          const pulse = Math.sin(x * 0.2 + time4) * Math.sin(y * 0.2 + time4 * 1.3);
-          const grid = ((x + y) % 3 === 0) ? 1 : 0;
-          const wave = Math.sin(Math.sqrt(x*x + y*y) * 0.2 - time4 * 2) * 0.5 + 0.5;
-          
-          if (grid && wave > 0.3) {
-            ctx.fillStyle = `rgba(255, 181, 36, ${wave})`;
-            ctx.fillText('◆', px, py);
-          } else if (pulse > 0.3) {
-            ctx.fillStyle = `rgba(139, 124, 255, ${pulse * 0.6})`;
-            const chars = ['+', '×', '·', '○'];
-            ctx.fillText(chars[Math.floor(pulse * chars.length)], px, py);
-          }
-        }
-      }
-      time4 += 0.02;
-      requestAnimationFrame(render4);
-    };
-    render4();
-  }
-};
-
-// Init ASCII canvases when DOM ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initAsciiCanvases);
-} else {
-  setTimeout(initAsciiCanvases, 100);
-}
-</script>
 </body>
 </html>

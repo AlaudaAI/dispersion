@@ -1704,293 +1704,260 @@ header {
 </header>
 
 <style>
-/* Portfolio Page Specific Styles */
-.portfolio-hero {
-  padding: 120px 0 60px;
+/* About Us Page Styles */
+.about-hero {
+  padding: 140px 0 80px;
   background: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio-hero__inner {
+.about-hero__inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
-  .portfolio-hero__inner {
+  .about-hero__inner {
     padding: 0 var(--space-lg);
   }
 }
 
 @media (min-width: 1024px) {
-  .portfolio-hero__inner {
+  .about-hero__inner {
     padding: 0 var(--space-xl);
   }
 }
 
-.portfolio-hero__title {
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: var(--space-lg);
+.about-hero__label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
 }
 
-.portfolio-hero__title span {
+.about-hero__title {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: var(--space-xl);
+}
+
+.about-hero__title span {
   color: var(--accent-gold);
 }
 
-.portfolio-hero__desc {
-  font-size: 18px;
-  line-height: 1.7;
+.about-hero__desc {
+  font-size: clamp(18px, 2.5vw, 24px);
+  line-height: 1.6;
   color: var(--text-secondary);
-  max-width: 800px;
+  max-width: 700px;
 }
 
-/* Investment Themes */
-.themes-section {
-  padding: var(--space-2xl) 0;
+.about-hero__decoration {
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .about-hero__decoration {
+    display: none;
+  }
+}
+
+/* Approach Section */
+.approach-section {
+  padding: var(--space-3xl) 0;
   background: var(--bg-white);
 }
 
-.themes-inner {
+.approach-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
 }
 
 @media (min-width: 768px) {
-  .themes-inner {
+  .approach-inner {
     padding: 0 var(--space-lg);
   }
 }
 
 @media (min-width: 1024px) {
-  .themes-inner {
+  .approach-inner {
     padding: 0 var(--space-xl);
   }
 }
 
-.themes-grid {
+.approach-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.approach-header h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.approach-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
 }
 
 @media (min-width: 768px) {
-  .themes-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .approach-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.theme-card {
-  text-align: center;
+.approach-card {
+  padding: var(--space-xl);
+  background: var(--bg-cream);
+  border-radius: 16px;
+  position: relative;
 }
 
-.theme-card__image {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 16px;
-  overflow: hidden;
+.approach-card__number {
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  line-height: 1;
   margin-bottom: var(--space-md);
 }
 
-.theme-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.theme-card__title {
-  font-size: 14px;
+.approach-card__title {
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
 }
 
-/* Full Portfolio Grid */
-.portfolio-full-section {
+.approach-card__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.approach-card__icon {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+/* CTA Section */
+.about-cta {
   padding: var(--space-3xl) 0;
-  background: var(--bg-cream);
+  background: var(--bg-secondary);
+  text-align: center;
 }
 
-.portfolio-full-inner {
-  max-width: var(--max-width);
+.about-cta__inner {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-lg);
 }
 
-@media (min-width: 768px) {
-  .portfolio-full-inner {
-    padding: 0 var(--space-lg);
-  }
+.about-cta__title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--text-inverse);
+  line-height: 1.2;
+  margin-bottom: var(--space-xl);
 }
 
-@media (min-width: 1024px) {
-  .portfolio-full-inner {
-    padding: 0 var(--space-xl);
-  }
+.about-cta__title span {
+  color: var(--accent-gold);
 }
 
-.portfolio-full-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
-}
-
-@media (min-width: 600px) {
-  .portfolio-full-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .portfolio-full-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .portfolio-full-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-.portfolio-full-item {
-  background: var(--bg-white);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: var(--space-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 120px;
+.about-cta__btn {
+  display: inline-block;
+  padding: 18px 48px;
+  background: var(--accent-gold);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 4px;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.portfolio-full-item:hover {
-  border-color: var(--accent-gold);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-}
-
-.portfolio-full-item img {
-  max-width: 100%;
-  max-height: 60px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.portfolio-full-item:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
+.about-cta__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 181, 36, 0.3);
 }
 </style>
 
-<!-- PORTFOLIO HERO -->
-<section class="portfolio-hero">
-  <div class="portfolio-hero__inner">
-    <div class="section-header">
-      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
-      </svg>
-      <span>Portfolio</span>
-    </div>
-    <h1 class="portfolio-hero__title">Investing in <span>Tomorrow's</span> Infrastructure</h1>
-    <p class="portfolio-hero__desc">We invest in technology before it's obvious. In our view, this is the decentralized to dispersed tech stack, including cybersecurity, dev tools, zero-knowledge-proofs, decentralized compute, and all the infrastructure for DeFi, gaming, the metaverse, and crypto.</p>
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="about-hero__inner">
+    <p class="about-hero__label">About</p>
+    <h1 class="about-hero__title">{<span>Dispersion Capital</span>}</h1>
+    <p class="about-hero__desc">We fund the inventive tools, platforms and infrastructure for developers to build and deploy the decentralized future.</p>
   </div>
+  <img src="assets/about-ball.7d994a7.svg" alt="" class="about-hero__decoration">
 </section>
 
-<!-- INVESTMENT THEMES -->
-<section class="themes-section">
-  <div class="themes-inner">
-    <div class="section-header" style="margin-bottom: var(--space-xl);">
-      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
-      </svg>
-      <span>Investment Themes</span>
+<!-- OUR APPROACH -->
+<section class="approach-section">
+  <div class="approach-inner">
+    <div class="approach-header">
+      <div class="section-header" style="margin-bottom: var(--space-md);">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
+        </svg>
+        <span>Our Approach</span>
+      </div>
+      <h2>How We Work</h2>
     </div>
-    <div class="themes-grid">
-      <div class="theme-card">
-        <div class="theme-card__image">
-          <img src="assets/thematics-1.b71be0d.png" alt="DeFi & Fintech">
-        </div>
-        <h3 class="theme-card__title">DeFi & Fintech</h3>
+    
+    <div class="approach-grid">
+      <div class="approach-card">
+        <img src="assets/cube-1.c497079.svg" alt="" class="approach-card__icon">
+        <div class="approach-card__number">01</div>
+        <h3 class="approach-card__title">We distribute capital and resources.</h3>
+        <p class="approach-card__desc">Pre-seed and seed-stage funding are critical for cutting-edge startups. We know that capital is immensely helpful, but only to the extent it helps you build. Funding is just one piece of the puzzle - we commit equal time and resources to help you leverage your unique value proposition to build communities, develop winning GTM strategy, and get the early-stage fundamentals right.</p>
       </div>
-      <div class="theme-card">
-        <div class="theme-card__image">
-          <img src="assets/thematics-2.a2c2d87.png" alt="Gaming & Metaverse">
-        </div>
-        <h3 class="theme-card__title">Gaming & Metaverse</h3>
+      
+      <div class="approach-card">
+        <img src="assets/cube-2.c4dfb39.svg" alt="" class="approach-card__icon">
+        <div class="approach-card__number">02</div>
+        <h3 class="approach-card__title">We develop and deploy.</h3>
+        <p class="approach-card__desc">We balance the importance of cutting-edge research and market needs to find pragmatic approaches to difficult problems. We'll help you use your technology to solve real-world problems.</p>
       </div>
-      <div class="theme-card">
-        <div class="theme-card__image">
-          <img src="assets/thematics-3.117b357.png" alt="Security & Infrastructure">
-        </div>
-        <h3 class="theme-card__title">Security & Infrastructure</h3>
+      
+      <div class="approach-card">
+        <img src="assets/cube-3.ab8443f.svg" alt="" class="approach-card__icon">
+        <div class="approach-card__number">03</div>
+        <h3 class="approach-card__title">We invest in the future from day one.</h3>
+        <p class="approach-card__desc">We have backed many of the industry's pioneering innovators and protocols from day zero. Even in challenging market conditions, the builders we back continue to develop industry-defining tech.</p>
       </div>
-      <div class="theme-card">
-        <div class="theme-card__image">
-          <img src="assets/thematics-4.5fdcb49.png" alt="Data & Developer Tools">
-        </div>
-        <h3 class="theme-card__title">Data & Dev Tools</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO COMPANIES -->
-<section class="portfolio-full-section">
-  <div class="portfolio-full-inner">
-    <div class="section-header" style="margin-bottom: var(--space-xl);">
-      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
-      </svg>
-      <span>Portfolio Companies</span>
-    </div>
-    <div class="portfolio-full-grid">
-      <div class="portfolio-full-item">
-        <img src="assets/alchemy.39d7370.png" alt="Alchemy">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/dapper.04e87ca.png" alt="Dapper Labs">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/forte.1f5a770.png" alt="Forte">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/spaceandtime.1ddac19.png" alt="Space and Time">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/zettablock.7d327b2.png" alt="ZettaBlock">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/metrika.558771d.png" alt="Metrika">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/cubesecurity.3e77549.png" alt="Cube Security">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/branch.f5692a8.png" alt="Branch">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/volterra.adde29f.png" alt="Volterra">
-      </div>
-      <div class="portfolio-full-item">
-        <img src="assets/web3.0e5ff08.png" alt="Web3">
+      
+      <div class="approach-card">
+        <div class="approach-card__number">04</div>
+        <h3 class="approach-card__title">We know web3.</h3>
+        <p class="approach-card__desc">We write smart contracts, run nodes, participate in crypto governance, and design system architecture to stay sharp on the protocols and infrastructure we back. As a team with experience in both web3 and web2 infrastructure, we have been at the forefront of the blockchain evolution since 2014, witnessing firsthand the rapid growth and innovation in this space.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section style="padding: var(--space-3xl) 0; background: var(--bg-secondary); text-align: center;">
-  <div style="max-width: 600px; margin: 0 auto; padding: 0 var(--space-lg);">
-    <h2 style="font-size: clamp(24px, 4vw, 36px); font-weight: 700; color: var(--text-inverse); margin-bottom: var(--space-md);">Building the Future?</h2>
-    <p style="font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: var(--space-xl);">We invest in foundational technologies for the decentralized web. If you're building infrastructure for web3, we'd love to hear from you.</p>
-    <a href="mailto:pitch@dispersion.xyz" style="display: inline-block; padding: 16px 40px; background: var(--accent-gold); color: var(--text-primary); font-weight: 700; font-size: 14px; border-radius: 4px; text-decoration: none;">Send Us A Pitch →</a>
+<section class="about-cta">
+  <div class="about-cta__inner">
+    <h2 class="about-cta__title">Are you building <span>next-gen web3</span>, crypto or decentralized infrastructure?</h2>
+    <a href="mailto:pitch@dispersion.xyz" class="about-cta__btn">Send Us A Pitch →</a>
   </div>
 </section>
 

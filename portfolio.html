@@ -1704,189 +1704,293 @@ header {
 </header>
 
 <style>
-/* Article Cards */
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-xl);
-  margin-top: var(--space-2xl);
+/* Portfolio Page Specific Styles */
+.portfolio-hero {
+  padding: 120px 0 60px;
+  background: var(--bg-cream);
 }
 
-.article-card {
+.portfolio-hero__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .portfolio-hero__inner {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-hero__inner {
+    padding: 0 var(--space-xl);
+  }
+}
+
+.portfolio-hero__title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+}
+
+.portfolio-hero__title span {
+  color: var(--accent-gold);
+}
+
+.portfolio-hero__desc {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 800px;
+}
+
+/* Investment Themes */
+.themes-section {
+  padding: var(--space-2xl) 0;
   background: var(--bg-white);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  display: block;
 }
 
-.article-card:hover {
-  border-color: var(--accent-gold);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+.themes-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
-.article-card__image {
+@media (min-width: 768px) {
+  .themes-inner {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .themes-inner {
+    padding: 0 var(--space-xl);
+  }
+}
+
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .themes-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.theme-card {
+  text-align: center;
+}
+
+.theme-card__image {
   width: 100%;
-  height: 200px;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #e07856 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  aspect-ratio: 1;
+  border-radius: 16px;
   overflow: hidden;
+  margin-bottom: var(--space-md);
 }
 
-.article-card__image img {
+.theme-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.article-card__image-icon {
-  font-size: 48px;
-  color: white;
-  opacity: 0.8;
-}
-
-.article-card__body {
-  padding: var(--space-lg);
-}
-
-.article-card__tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent-gold);
-  margin-bottom: var(--space-sm);
-}
-
-.article-card__title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: var(--space-sm);
-  line-height: 1.3;
-}
-
-.article-card__excerpt {
+.theme-card__title {
   font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: var(--space-md);
-}
-
-.article-card__link {
-  font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
-  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Full Portfolio Grid */
+.portfolio-full-section {
+  padding: var(--space-3xl) 0;
+  background: var(--bg-cream);
+}
+
+.portfolio-full-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .portfolio-full-inner {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-full-inner {
+    padding: 0 var(--space-xl);
+  }
+}
+
+.portfolio-full-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (min-width: 600px) {
+  .portfolio-full-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .portfolio-full-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio-full-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.portfolio-full-item {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  min-height: 120px;
+  transition: all 0.3s ease;
 }
 
-.article-card__link svg {
-  width: 14px;
-  height: 14px;
-  transition: transform 0.2s ease;
+.portfolio-full-item:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
-.article-card:hover .article-card__link svg {
-  transform: translateX(4px);
+.portfolio-full-item img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.portfolio-full-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 </style>
 
-<!-- LEARN/NEWSROOM PAGE CONTENT -->
-<section class="team-section" style="padding-top: 120px; border-top: none; min-height: 80vh; position: relative;">
-  <div class="team-inner">
-    <div class="team-header" style="position: relative; z-index: 2;">
-      <div class="section-header" style="justify-content: center;">
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
-        </svg>
-        <span>Newsroom</span>
+<!-- PORTFOLIO HERO -->
+<section class="portfolio-hero">
+  <div class="portfolio-hero__inner">
+    <div class="section-header">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
+      </svg>
+      <span>Portfolio</span>
+    </div>
+    <h1 class="portfolio-hero__title">Investing in <span>Tomorrow's</span> Infrastructure</h1>
+    <p class="portfolio-hero__desc">We invest in technology before it's obvious. In our view, this is the decentralized to dispersed tech stack, including cybersecurity, dev tools, zero-knowledge-proofs, decentralized compute, and all the infrastructure for DeFi, gaming, the metaverse, and crypto.</p>
+  </div>
+</section>
+
+<!-- INVESTMENT THEMES -->
+<section class="themes-section">
+  <div class="themes-inner">
+    <div class="section-header" style="margin-bottom: var(--space-xl);">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
+      </svg>
+      <span>Investment Themes</span>
+    </div>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-card__image">
+          <img src="assets/thematics-1.b71be0d.png" alt="DeFi & Fintech">
+        </div>
+        <h3 class="theme-card__title">DeFi & Fintech</h3>
       </div>
-      <h2>Dispersion Capital <span>Newsroom</span></h2>
-      <p>Learn more about our work to pioneer the decentralized future.</p>
+      <div class="theme-card">
+        <div class="theme-card__image">
+          <img src="assets/thematics-2.a2c2d87.png" alt="Gaming & Metaverse">
+        </div>
+        <h3 class="theme-card__title">Gaming & Metaverse</h3>
+      </div>
+      <div class="theme-card">
+        <div class="theme-card__image">
+          <img src="assets/thematics-3.117b357.png" alt="Security & Infrastructure">
+        </div>
+        <h3 class="theme-card__title">Security & Infrastructure</h3>
+      </div>
+      <div class="theme-card">
+        <div class="theme-card__image">
+          <img src="assets/thematics-4.5fdcb49.png" alt="Data & Developer Tools">
+        </div>
+        <h3 class="theme-card__title">Data & Dev Tools</h3>
+      </div>
     </div>
-    
-    <!-- Crystal decoration -->
-    <img src="assets/crystal.0889931.png" alt="" style="position: absolute; right: 5%; top: 10%; width: 180px; opacity: 0.7; z-index: 1;">
-    
-    <!-- Articles Grid -->
-    <div class="articles-grid" style="position: relative; z-index: 2;">
-      <!-- Press Kit Article -->
-      <a href="https://dispersion.xyz/learn/254/dispersion-capital-press-kit" target="_blank" class="article-card">
-        <div class="article-card__image">
-          <img src="assets/crystal.0889931.png" alt="Press Kit" style="object-fit: contain; padding: 40px; background: linear-gradient(135deg, #1a1b4b 0%, #2a2b6b 100%);">
-        </div>
-        <div class="article-card__body">
-          <span class="article-card__tag">Media</span>
-          <h3 class="article-card__title">Dispersion Capital Press Kit</h3>
-          <p class="article-card__excerpt">Access our press kit including company boilerplate, Patrick Chang bio, and downloadable photos for media use.</p>
-          <span class="article-card__link">
-            Read More 
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-      
-      <!-- About Dispersion Economy -->
-      <a href="https://dispersion.xyz/about-us" target="_blank" class="article-card">
-        <div class="article-card__image" style="background: linear-gradient(135deg, #6b7cff 0%, #a8b4ff 100%);">
-          <svg class="article-card__image-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 80px;">
-            <path d="M54.93 24.4852C54.6281 23.9384 54.1851 23.4827 53.6471 23.1657C53.109 22.8486 52.4957 22.6817 51.8712 22.6825H47.5564L50.5395 17.7977C50.8713 17.267 51.0542 16.6568 51.069 16.031C51.0839 15.4053 50.9301 14.7871 50.6239 14.2412C50.3176 13.6953 49.8702 13.2419 49.3285 12.9284C48.7867 12.6149 48.1706 12.4529 47.5447 12.4594H42.596L45.8176 7.18506C46.1509 6.65421 46.3351 6.04338 46.3507 5.41676C46.3663 4.79015 46.2128 4.1709 45.9064 3.6241C45.6 3.0773 45.1519 2.62314 44.6093 2.30936C44.0667 1.99558 43.4496 1.83377 42.8228 1.84093H18.6492C18.0483 1.84349 17.4581 1.99915 16.9341 2.2932C16.4101 2.58725 15.9696 3.00998 15.6544 3.52151L0.534981 28.3057C0.203055 28.8345 0.0190799 29.4426 0.00224555 30.0667C-0.0145888 30.6908 0.136334 31.3079 0.439272 31.8538C0.74221 32.3997 1.18607 32.8543 1.72455 33.1702C2.26303 33.4861 2.87641 33.6518 3.50071 33.6499H8.44941L5.24526 38.9242C4.91197 39.4551 4.72783 40.0659 4.71221 40.6925C4.69658 41.3191 4.85005 41.9384 5.15647 42.4852C5.46289 43.032 5.91096 43.4861 6.45357 43.7999C6.99618 44.1137 7.6133 44.2755 8.24007 44.2683H12.5549L9.57174 49.1531C9.23997 49.6838 9.05709 50.294 9.04225 50.9198C9.02741 51.5455 9.18117 52.1637 9.48741 52.7096C9.79365 53.2555 10.2411 53.7089 10.7828 54.0224C11.3246 54.3359 11.9407 54.4979 12.5665 54.4914H36.7402C37.3412 54.4899 37.932 54.3347 38.4561 54.0406C38.9803 53.7464 39.4206 53.3231 39.735 52.8108L54.8835 28.0266C55.2066 27.4942 55.3813 26.885 55.3895 26.2622C55.3977 25.6395 55.239 25.0259 54.93 24.4852Z" fill="white"/>
-          </svg>
-        </div>
-        <div class="article-card__body">
-          <span class="article-card__tag">About</span>
-          <h3 class="article-card__title">The Dispersion Economy</h3>
-          <p class="article-card__excerpt">Learn about our vision for a multi-chain, multi-currency, and multi-platform world powering the decentralized future.</p>
-          <span class="article-card__link">
-            Learn More 
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-        </div>
-      </a>
-      
-      <!-- Portfolio -->
-      <a href="https://dispersion.xyz/portfolio" target="_blank" class="article-card">
-        <div class="article-card__image" style="background: linear-gradient(135deg, #FFB524 0%, #e07856 100%);">
-          <svg class="article-card__image-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" style="width: 64px; height: 64px;">
-            <path d="M21 7.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7.5"/>
-            <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-            <path d="M3 7.5h18"/>
-            <path d="M8 3h8l2 4.5H6L8 3z"/>
-          </svg>
-        </div>
-        <div class="article-card__body">
-          <span class="article-card__tag">Investments</span>
-          <h3 class="article-card__title">Our Portfolio</h3>
-          <p class="article-card__excerpt">Explore our investments in foundational technologies including Alchemy, Dapper Labs, Flow, Forte, Syndicate, and more.</p>
-          <span class="article-card__link">
-            View Portfolio 
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-        </div>
-      </a>
+  </div>
+</section>
+
+<!-- PORTFOLIO COMPANIES -->
+<section class="portfolio-full-section">
+  <div class="portfolio-full-inner">
+    <div class="section-header" style="margin-bottom: var(--space-xl);">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.6943 7.0484C15.6081 6.89219 15.4815 6.76199 15.3278 6.6714C15.174 6.5808 14.9988 6.53312 14.8204 6.53334H13.5876L14.4399 5.1377C14.5347 4.98606 14.5869 4.81171 14.5912 4.63293C14.5954 4.45415 14.5515 4.27752 14.464 4.12156C14.3765 3.96559 14.2487 3.83604 14.0939 3.74647C13.9391 3.6569 13.7631 3.61061 13.5842 3.61247H12.1703L13.0908 2.10551C13.186 1.95384 13.2386 1.77932 13.2431 1.60029C13.2475 1.42125 13.2037 1.24433 13.1161 1.0881C13.0286 0.931868 12.9006 0.802108 12.7455 0.712457C12.5905 0.622805 12.4142 0.576572 12.2351 0.578617H5.32837C5.1567 0.579351 4.98804 0.623824 4.83833 0.707838C4.68861 0.791851 4.56278 0.912634 4.47271 1.05878L0.152878 8.13999C0.0580418 8.29106 0.00547756 8.46481 0.000667743 8.64312C-0.00414207 8.82143 0.0389787 8.99776 0.125532 9.15373C0.212086 9.3097 0.338902 9.43958 0.492754 9.52984C0.646605 9.6201 0.821857 9.66743 1.00023 9.66688H2.41414L1.49867 11.1738C1.40345 11.3255 1.35084 11.5 1.34637 11.6791C1.34191 11.8581 1.38575 12.035 1.4733 12.1913C1.56085 12.3475 1.68887 12.4772 1.8439 12.5669C1.99894 12.6565 2.17526 12.7028 2.35433 12.7007H3.58715L2.73481 14.0964C2.64002 14.248 2.58777 14.4224 2.58353 14.6011C2.57929 14.7799 2.62322 14.9566 2.71072 15.1125C2.79821 15.2685 2.92605 15.398 3.08084 15.4876C3.23562 15.5772 3.41165 15.6235 3.59047 15.6216H10.4972C10.669 15.6212 10.8377 15.5768 10.9875 15.4928C11.1373 15.4088 11.263 15.2878 11.3529 15.1414L15.681 8.06024C15.7733 7.90812 15.8233 7.73406 15.8256 7.55613C15.8279 7.3782 15.7826 7.20289 15.6943 7.0484Z" fill="#FFB524"/>
+      </svg>
+      <span>Portfolio Companies</span>
     </div>
-    
-    <!-- Media Contact -->
-    <div style="text-align: center; margin-top: var(--space-3xl); position: relative; z-index: 2;">
-      <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: var(--space-md);">For media inquiries and press requests</p>
-      <a href="mailto:media@dispersion.xyz" style="display: inline-block; padding: 14px 32px; background: var(--accent-gold); color: var(--text-primary); font-weight: 600; font-size: 14px; border-radius: 4px; text-decoration: none;">Media Inquiries →</a>
+    <div class="portfolio-full-grid">
+      <div class="portfolio-full-item">
+        <img src="assets/alchemy.39d7370.png" alt="Alchemy">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/dapper.04e87ca.png" alt="Dapper Labs">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/forte.1f5a770.png" alt="Forte">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/spaceandtime.1ddac19.png" alt="Space and Time">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/zettablock.7d327b2.png" alt="ZettaBlock">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/metrika.558771d.png" alt="Metrika">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/cubesecurity.3e77549.png" alt="Cube Security">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/branch.f5692a8.png" alt="Branch">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/volterra.adde29f.png" alt="Volterra">
+      </div>
+      <div class="portfolio-full-item">
+        <img src="assets/web3.0e5ff08.png" alt="Web3">
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding: var(--space-3xl) 0; background: var(--bg-secondary); text-align: center;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 0 var(--space-lg);">
+    <h2 style="font-size: clamp(24px, 4vw, 36px); font-weight: 700; color: var(--text-inverse); margin-bottom: var(--space-md);">Building the Future?</h2>
+    <p style="font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: var(--space-xl);">We invest in foundational technologies for the decentralized web. If you're building infrastructure for web3, we'd love to hear from you.</p>
+    <a href="mailto:pitch@dispersion.xyz" style="display: inline-block; padding: 16px 40px; background: var(--accent-gold); color: var(--text-primary); font-weight: 700; font-size: 14px; border-radius: 4px; text-decoration: none;">Send Us A Pitch →</a>
   </div>
 </section>
 

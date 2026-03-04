@@ -1897,6 +1897,101 @@ header {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(255, 181, 36, 0.3);
 }
+
+/* ========== MOBILE OPTIMIZATION ========== */
+@media (max-width: 768px) {
+  /* Hero adjustments */
+  .about-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .about-hero__title {
+    font-size: 32px;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .about-hero__desc {
+    font-size: 16px;
+  }
+  
+  /* Approach section */
+  .approach-section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .approach-header {
+    margin-bottom: var(--space-xl);
+  }
+  
+  .approach-grid {
+    gap: var(--space-lg);
+  }
+  
+  .approach-card {
+    padding: var(--space-lg);
+  }
+  
+  .approach-card__number {
+    font-size: 48px;
+  }
+  
+  .approach-card__title {
+    font-size: 18px;
+  }
+  
+  .approach-card__desc {
+    font-size: 14px;
+  }
+  
+  .approach-card__icon {
+    width: 36px;
+    height: 36px;
+    top: var(--space-md);
+    right: var(--space-md);
+  }
+  
+  /* CTA section */
+  .about-cta {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .about-cta__inner {
+    padding: 0 var(--space-md);
+  }
+  
+  .about-cta__title {
+    font-size: 24px;
+  }
+  
+  .about-cta__btn {
+    padding: 14px 32px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 90px 0 40px;
+  }
+  
+  .about-hero__title {
+    font-size: 28px;
+  }
+  
+  .approach-card__number {
+    font-size: 40px;
+  }
+  
+  .about-cta__title {
+    font-size: 22px;
+  }
+  
+  .about-cta__btn {
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+  }
+}
 </style>
 
 <!-- ABOUT HERO -->
